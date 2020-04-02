@@ -1,7 +1,7 @@
 #include <iostream>
 #include <SFML/Graphics.hpp>
 using namespace std; using namespace sf;
-
+//function bta5od makan el mouse w 7dod el block w tshof eza kan el mouse gowa el block wala bra
 bool isSpriteHover(FloatRect sprite,Vector2f mp)
 {
 	if (sprite.contains(mp)) {
@@ -12,16 +12,17 @@ bool isSpriteHover(FloatRect sprite,Vector2f mp)
 void main() {
 	RenderWindow win(VideoMode(800, 800), "Peter Prog", Style::Close | Style::Resize);
 	Sprite RedB, YB,YB1;
-	Texture MainB_tux, B_tux, B1_tux;
+	Texture RedB_tux, YB_tux, YB1_tux;
 	RedB.setPosition(50, 50);YB.setPosition(250, 250);YB1.setPosition(550, 550);
+	//ana hena kont bazbot el origine fi nos el block mo2katan bs b3d kda han3mlha btr2a a7sn 3alashan tshta8al m3 ay sora 3la tool
 	float x = 148.5;
 	float y = 72.5;
 	float x1 = 225.5;
 	float y1 = 72;
-	RedB.setOrigin(x, y);YB.setOrigin(x1, y1);YB1.setOrigin(x1, y1);
+	RedB.setOrigin(x, y);YB.setOrigin(x1, y1);YB1.setOrigin(y1, x1);
 
-	MainB_tux.loadFromFile("MainB.jpg"); B_tux.loadFromFile("B.jpg");B1_tux.loadFromFile("B1.jpg");
-	RedB.setTexture(MainB_tux); YB.setTexture(B_tux); YB1.setTexture(B1_tux);
+	RedB_tux.loadFromFile("MainB.jpg"); YB_tux.loadFromFile("B.jpg");YB1_tux.loadFromFile("B1.jpg");
+	RedB.setTexture(RedB_tux); YB.setTexture(YB_tux); YB1.setTexture(YB1_tux);
 	sf::Vector2f mp;
 	while (win.isOpen())
 	{
@@ -30,21 +31,16 @@ void main() {
 			if (evnt.type == Event::Closed) {
 				win.close();
 			}
-			if (Mouse::isButtonPressed(Mouse::Left)) {
-				Vector2i pos4 = Mouse::getPosition(win);
-				cout << pos4.x << " " << pos4.y << endl;
-			}
+			// ana hena ba5od makan el mouse fi victor asmo mp
 			mp.x = sf::Mouse::getPosition(win).x;
 			mp.y = sf::Mouse::getPosition(win).y;
-			if (isSpriteHover(RedB.getGlobalBounds(), sf::Vector2f(evnt.mouseButton.x, evnt.mouseButton.y)) == true)
+			//b tcheck an el mouse gpwa el block fa bb3tlo 7dodo w makan el mouse
+			if (isSpriteHover(RedB.getGlobalBounds(), sf::Vector2f(evnt.mouseButton.x, evnt.mouseButton.y)))
 			{
-				while (true)
-				{
-					if (Mouse::isButtonPressed(Mouse::Left)) {
+				while (Mouse::isButtonPressed(Mouse::Left)) {
 						Vector2i pos = Mouse::getPosition(win);
 						RedB.setPosition((float)pos.x, 50);
-					}
-					else break;
+
 				}
 			}
 			if (isSpriteHover(YB.getGlobalBounds(), sf::Vector2f(evnt.mouseButton.x, evnt.mouseButton.y)) == true)
@@ -63,9 +59,9 @@ void main() {
 				}
 			}
 			win.clear();
-			win.draw(MainB);
-			win.draw(B);
-			win.draw(B1);
+			win.draw(RedB);
+			win.draw(YB);
+			win.draw(YB1);
 			win.display();
 		}
 	}
