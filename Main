@@ -1,0 +1,77 @@
+#include <iostream>
+#include <SFML/Graphics.hpp>
+using namespace std; using namespace sf;
+//function bta5od makan el mouse w 7dod el block w tshof eza kan el mouse gowa el block wala bra
+bool isSpriteHover(FloatRect sprite,Vector2f mp)
+{
+	if (sprite.contains(mp)) {
+		return true;
+	}
+	return false;
+}
+void main() {
+	RenderWindow win(VideoMode(1250, 750), "Peter Prog", Style::Close | Style::Resize);
+	Sprite RedB, YB,YB1;
+	Texture RedB_tux, YB_tux, YB1_tux;
+	RedB.setPosition(50, 50);YB.setPosition(250, 250);YB1.setPosition(550, 550);
+	//ana hena kont bazbot el origine fi nos el block mo2katan bs b3d kda han3mlha btr2a a7sn 3alashan tshta8al m3 ay sora 3la tool
+	float x = 148.5;
+	float y = 72.5;
+	float x1 = 225.5;
+	float y1 = 72;
+	RedB.setOrigin(x, y);YB.setOrigin(x1, y1);YB1.setOrigin(y1, x1);
+
+	RedB_tux.loadFromFile("MainB.jpg"); YB_tux.loadFromFile("B.jpg");YB1_tux.loadFromFile("B1.jpg");
+	RedB.setTexture(RedB_tux); YB.setTexture(YB_tux); YB1.setTexture(YB1_tux);
+	
+	 while (win.isOpen())
+	{
+		Event evnt;
+		while (win.pollEvent(evnt)) {
+			if (evnt.type == Event::Closed) {
+				win.close();
+			}
+			// ana hena ba5od makan el mouse fi victor asmo mp
+			Vector2f mp;
+			mp.x = sf::Mouse::getPosition(win).x;
+			mp.y = sf::Mouse::getPosition(win).y;
+			//b tcheck an el mouse gpwa el block fa bb3tlo 7dodo w makan el mouse
+			if (isSpriteHover(RedB.getGlobalBounds(),Vector2f (evnt.mouseMove.x, evnt.mouseMove.y)))
+			{
+					RedB_tux.loadFromFile("B.jpg");
+			}
+			else RedB_tux.loadFromFile("MainB.jpg");
+					
+			}
+			if (isSpriteHover(YB.getGlobalBounds(), sf::Vector2f(evnt.mouseButton.x, evnt.mouseButton.y)) == true)
+			{
+				while (Mouse::isButtonPressed(Mouse::Left))
+				{
+					win.close();
+					win_2.create(VideoMode(1250, 750), "Page 2", Style::Close | Style::Resize);
+					while (win_1.isOpen())
+					{
+						Event evnt_2;
+						while (win_2.pollEvent(evnt_2)) {
+							if (evnt_2.type == Event::Closed) {
+								win_2.close();
+								goto Game_Loop;
+							}
+						}
+					}
+				}
+			}if (isSpriteHover(YB1.getGlobalBounds(), sf::Vector2f(evnt.mouseButton.x, evnt.mouseButton.y)) == true)
+			{
+				while (Mouse::isButtonPressed(Mouse::Left))
+				{
+					Vector2i pos3 = Mouse::getPosition(win);
+					YB1.setPosition(550, (float)pos3.y);
+				}
+			}
+			win.clear();
+			win.draw(RedB);
+			win.draw(YB);
+			win.draw(YB1);
+			win.display();
+		}
+	}
