@@ -1,0 +1,308 @@
+#include <SFML/Graphics.hpp>
+#include <iostream>
+using namespace sf;
+using namespace std;
+int main() {
+    RenderWindow window(VideoMode(1250, 750), "Level 1", Style::Close | Style::Resize);
+    Font acmesa;acmesa.loadFromFile("Game/acmesa.ttf");int txt = 0;String str = to_string(txt);
+    Text moves; moves.setString(str); moves.setCharacterSize(72);moves.setFillColor(Color(122, 60, 2));moves.setFont(acmesa);
+    Sprite bg, RedB, block1, block2, block3, block4, block5, block6, block7, reset;
+    Texture bg_tux, RedB_tux, block1_tux, block2_tux, block3_tux, block4_tux, block5_tux, block6_tux, block7_tux, reset_tux;
+    Vector2f mp;
+    bg_tux.loadFromFile("Game/BG.png"), RedB_tux.loadFromFile("Game/RedB.png"),
+        block1_tux.loadFromFile("Game/block 1.png"), block2_tux.loadFromFile("Game/block 2.png"),
+        block3_tux.loadFromFile("Game/block 3.png"), block4_tux.loadFromFile("Game/block 4.png"),
+        block5_tux.loadFromFile("Game/block 5.png"), block6_tux.loadFromFile("Game/block 6.png"),
+        block7_tux.loadFromFile("Game/block 7.png"), reset_tux.loadFromFile("Game/reset.png");
+    bg.setTexture(bg_tux), RedB.setTexture(RedB_tux), block1.setTexture(block1_tux), block2.setTexture(block2_tux),
+        block3.setTexture(block3_tux), block4.setTexture(block4_tux), block5.setTexture(block5_tux), block6.setTexture(block6_tux),
+        block7.setTexture(block7_tux), reset.setTexture(reset_tux);
+    RedB.setOrigin(RedB.getGlobalBounds().width / 2, RedB.getGlobalBounds().height / 2);
+    block1.setOrigin(block1.getGlobalBounds().width / 2, block1.getGlobalBounds().height / 2);
+    block2.setOrigin(block2.getGlobalBounds().width / 2, block2.getGlobalBounds().height / 2);
+    block3.setOrigin(block3.getGlobalBounds().width / 2, block3.getGlobalBounds().height / 2);
+    block4.setOrigin(block4.getGlobalBounds().width / 2, block4.getGlobalBounds().height / 2);
+    block5.setOrigin(block5.getGlobalBounds().width / 2, block5.getGlobalBounds().height / 2);
+    block6.setOrigin(block6.getGlobalBounds().width / 2, block6.getGlobalBounds().height / 2);
+    block7.setOrigin(block7.getGlobalBounds().width / 2, block7.getGlobalBounds().height / 2);
+Reset:RedB.setPosition(426, 353.5);block1.setPosition(474, 558.5);block2.setPosition(733.5, 459.5);block3.setPosition(682.5, 252);
+    block4.setPosition(890, 402);block5.setPosition(890, 610.5);block6.setPosition(579, 402);block7.setPosition(476, 248);
+    reset.setPosition(1023, 27);moves.setPosition(158.19, 565.54);
+    while (window.isOpen())
+    {
+        Event event;
+        while (window.pollEvent(event))
+        {
+            if (event.type == Event::Closed)
+                window.close();
+            mp.x = Mouse::getPosition(window).x;
+            mp.y = Mouse::getPosition(window).y;
+            if (RedB.getGlobalBounds().contains(mp) && Mouse::isButtonPressed(Mouse::Left)) {
+                if (Mouse::getPosition(window).x > RedB.getPosition().x) {
+                    for (int i = RedB.getPosition().x;i < Mouse::getPosition(window).x;i++) {
+                        RedB.setPosition(i, 353.5);
+                        if (RedB.getGlobalBounds().intersects(block6.getGlobalBounds()) ||
+                            RedB.getGlobalBounds().intersects(block3.getGlobalBounds()) ||
+                            RedB.getGlobalBounds().intersects(block4.getGlobalBounds()) ||
+                            RedB.getGlobalBounds().intersects(block5.getGlobalBounds()) ||
+                            RedB.getGlobalBounds().left + 206 > 940) {
+                            RedB.setPosition(i - 1, 353.5);
+                            break;
+                        }
+                    }
+                }
+                else if (Mouse::getPosition(window).x < RedB.getPosition().x) {
+                    for (int i = RedB.getPosition().x;i > Mouse::getPosition(window).x;i--) {
+                        RedB.setPosition(i, 353.5);
+                        if (RedB.getGlobalBounds().intersects(block6.getGlobalBounds()) ||
+                            RedB.getGlobalBounds().intersects(block3.getGlobalBounds()) ||
+                            RedB.getGlobalBounds().intersects(block4.getGlobalBounds()) ||
+                            RedB.getGlobalBounds().intersects(block5.getGlobalBounds()) ||
+                            RedB.getGlobalBounds().left < 323) {
+                            RedB.setPosition(i + 1, 353.5);
+                            break;
+                        }
+                    }
+                }txt++;str = to_string(txt);moves.setString(str);
+                if (Mouse::Left) {
+                    cout << "workes";
+                }
+            }
+            if (block1.getGlobalBounds().contains(mp)) {
+                if (Mouse::isButtonPressed(Mouse::Left)) {
+                    if (Mouse::getPosition(window).x > block1.getPosition().x) {
+                        for (int i = block1.getPosition().x;i < Mouse::getPosition(window).x;i++) {
+                            block1.setPosition(i, 558.5);
+                            if (block1.getGlobalBounds().intersects(block6.getGlobalBounds()) ||
+                                block1.getGlobalBounds().intersects(block3.getGlobalBounds()) ||
+                                block1.getGlobalBounds().intersects(block4.getGlobalBounds()) ||
+                                block1.getGlobalBounds().intersects(block5.getGlobalBounds()) ||
+                                block1.getGlobalBounds().left + 302 > 940) {
+                                block1.setPosition(i - 1, 558.5);
+                                break;
+                            }
+                        }
+                    }
+                    else if (Mouse::getPosition(window).x < block1.getPosition().x) {
+                        for (int i = block1.getPosition().x;i > Mouse::getPosition(window).x;i--) {
+                            block1.setPosition(i, 558.5);
+                            if (block1.getGlobalBounds().intersects(block6.getGlobalBounds()) ||
+                                block1.getGlobalBounds().intersects(block3.getGlobalBounds()) ||
+                                block1.getGlobalBounds().intersects(block4.getGlobalBounds()) ||
+                                block1.getGlobalBounds().intersects(block5.getGlobalBounds()) ||
+                                block1.getGlobalBounds().left < 323) {
+                                block1.setPosition(i + 1, 558.5);
+                                break;
+                            }
+                        }
+                    }
+                }
+                txt++; str = to_string(txt);moves.setString(str);
+            }
+            if (block2.getGlobalBounds().contains(mp)) {
+                if (Mouse::isButtonPressed(Mouse::Left)) {
+                    if (Mouse::getPosition(window).x > block2.getPosition().x) {
+                        for (int i = block2.getPosition().x;i < Mouse::getPosition(window).x;i++) {
+                            block2.setPosition(i, 459.5);
+                            if (block2.getGlobalBounds().intersects(block6.getGlobalBounds()) ||
+                                block2.getGlobalBounds().intersects(block3.getGlobalBounds()) ||
+                                block2.getGlobalBounds().intersects(block4.getGlobalBounds()) ||
+                                block2.getGlobalBounds().intersects(block5.getGlobalBounds()) ||
+                                block2.getGlobalBounds().left + 205 > 940) {
+                                block2.setPosition(i - 1, 459.5);
+                                break;
+                            }
+                        }
+                    }
+                    else if (Mouse::getPosition(window).x < block2.getPosition().x) {
+                        for (int i = block2.getPosition().x;i > Mouse::getPosition(window).x;i--) {
+                            block2.setPosition(i, 459.5);
+                            if (block2.getGlobalBounds().intersects(block6.getGlobalBounds()) ||
+                                block2.getGlobalBounds().intersects(block3.getGlobalBounds()) ||
+                                block2.getGlobalBounds().intersects(block4.getGlobalBounds()) ||
+                                block2.getGlobalBounds().intersects(block5.getGlobalBounds()) ||
+                                block2.getGlobalBounds().left < 323) {
+                                block2.setPosition(i + 1, 459.5);
+                                break;
+                            }
+                        }
+                    }
+
+                }
+                txt++; str = to_string(txt);moves.setString(str);
+            }if (block3.getGlobalBounds().contains(mp)) {
+                if (Mouse::isButtonPressed(Mouse::Left)) {
+                    if (Mouse::getPosition(window).y > block3.getPosition().y) {
+                        for (int i = block3.getPosition().y;i < Mouse::getPosition(window).y;i++) {
+                            block3.setPosition(682.5, i);
+                            if (block3.getGlobalBounds().intersects(RedB.getGlobalBounds()) ||
+                                block3.getGlobalBounds().intersects(block1.getGlobalBounds()) ||
+                                block3.getGlobalBounds().intersects(block2.getGlobalBounds()) ||
+                                block3.getGlobalBounds().intersects(block7.getGlobalBounds()) ||
+                                block3.getGlobalBounds().top + 312 > 715) {
+                                block3.setPosition(682.5, i - 1);
+                                break;
+                            }
+                        }
+                    }
+                    else if (Mouse::getPosition(window).y < block3.getPosition().x) {
+                        for (int i = block3.getPosition().y;i > Mouse::getPosition(window).y;i--) {
+                            block3.setPosition(682.5, i);
+                            if (block3.getGlobalBounds().intersects(RedB.getGlobalBounds()) ||
+                                block3.getGlobalBounds().intersects(block1.getGlobalBounds()) ||
+                                block3.getGlobalBounds().intersects(block2.getGlobalBounds()) ||
+                                block3.getGlobalBounds().intersects(block7.getGlobalBounds()) ||
+                                block3.getGlobalBounds().top < 83) {
+                                block3.setPosition(682.5, i + 1);
+                                break;
+                            }
+                        }
+                    }
+
+                }txt++; str = to_string(txt);moves.setString(str);
+            }if (block4.getGlobalBounds().contains(mp))
+            {
+                if (Mouse::isButtonPressed(Mouse::Left)) {
+                    if (Mouse::getPosition(window).y > block4.getPosition().y) {
+                        for (int i = block4.getPosition().y;i < Mouse::getPosition(window).y;i++) {
+                            block4.setPosition(890, i);
+                            if (block4.getGlobalBounds().intersects(RedB.getGlobalBounds()) ||
+                                block4.getGlobalBounds().intersects(block1.getGlobalBounds()) ||
+                                block4.getGlobalBounds().intersects(block2.getGlobalBounds()) ||
+                                block4.getGlobalBounds().intersects(block7.getGlobalBounds()) ||
+                                block4.getGlobalBounds().intersects(block5.getGlobalBounds()) ||
+                                block4.getGlobalBounds().top + 200 > 715) {
+                                block4.setPosition(890, i - 1);
+                                break;
+                            }
+                        }
+                    }
+                    else if (Mouse::getPosition(window).y < block4.getPosition().x) {
+                        for (int i = block4.getPosition().y;i > Mouse::getPosition(window).y;i--) {
+                            block4.setPosition(890, i);
+                            if (block4.getGlobalBounds().intersects(RedB.getGlobalBounds()) ||
+                                block4.getGlobalBounds().intersects(block1.getGlobalBounds()) ||
+                                block4.getGlobalBounds().intersects(block2.getGlobalBounds()) ||
+                                block4.getGlobalBounds().intersects(block7.getGlobalBounds()) ||
+                                block4.getGlobalBounds().intersects(block5.getGlobalBounds()) ||
+                                block4.getGlobalBounds().top < 83) {
+                                block4.setPosition(890, i + 1);
+                                break;
+                            }
+                        }
+                    }
+                }txt++;str = to_string(txt);moves.setString(str);
+            }if (block5.getGlobalBounds().contains(mp))
+            {
+                if (Mouse::isButtonPressed(Mouse::Left)) {
+                    if (Mouse::getPosition(window).y > block5.getPosition().y) {
+                        for (int i = block5.getPosition().y;i < Mouse::getPosition(window).y;i++) {
+                            block5.setPosition(890, i);
+                            if (block5.getGlobalBounds().intersects(RedB.getGlobalBounds()) ||
+                                block5.getGlobalBounds().intersects(block1.getGlobalBounds()) ||
+                                block5.getGlobalBounds().intersects(block2.getGlobalBounds()) ||
+                                block5.getGlobalBounds().intersects(block7.getGlobalBounds()) ||
+                                block5.getGlobalBounds().intersects(block4.getGlobalBounds()) ||
+                                block5.getGlobalBounds().top + 209 > 715) {
+                                block5.setPosition(890, i - 1);
+                                break;
+                            }
+                        }
+                    }
+                    else if (Mouse::getPosition(window).y < block5.getPosition().x) {
+                        for (int i = block5.getPosition().y;i > Mouse::getPosition(window).y;i--) {
+                            block5.setPosition(890, i);
+                            if (block5.getGlobalBounds().intersects(RedB.getGlobalBounds()) ||
+                                block5.getGlobalBounds().intersects(block1.getGlobalBounds()) ||
+                                block5.getGlobalBounds().intersects(block2.getGlobalBounds()) ||
+                                block5.getGlobalBounds().intersects(block7.getGlobalBounds()) ||
+                                block5.getGlobalBounds().intersects(block4.getGlobalBounds()) ||
+                                block5.getGlobalBounds().top < 83) {
+                                block5.setPosition(890, i + 1);
+                                break;
+                            }
+                        }
+                    }
+
+                }txt++;str = to_string(txt);moves.setString(str);
+            }if (block6.getGlobalBounds().contains(mp))
+            {
+                if (Mouse::isButtonPressed(Mouse::Left)) {
+                    if (Mouse::getPosition(window).y > block6.getPosition().y) {
+                        for (int i = block6.getPosition().y;i < Mouse::getPosition(window).y;i++) {
+                            block6.setPosition(579, i);
+                            if (block6.getGlobalBounds().intersects(RedB.getGlobalBounds()) ||
+                                block6.getGlobalBounds().intersects(block1.getGlobalBounds()) ||
+                                block6.getGlobalBounds().intersects(block2.getGlobalBounds()) ||
+                                block6.getGlobalBounds().intersects(block7.getGlobalBounds()) ||
+                                block6.getGlobalBounds().top + 200 > 715) {
+                                block6.setPosition(579, i - 1);
+                                break;
+                            }
+                        }
+                    }
+                    else if (Mouse::getPosition(window).y < block6.getPosition().x) {
+                        for (int i = block6.getPosition().y;i > Mouse::getPosition(window).y;i--) {
+                            block6.setPosition(579, i);
+                            if (block6.getGlobalBounds().intersects(RedB.getGlobalBounds()) ||
+                                block6.getGlobalBounds().intersects(block1.getGlobalBounds()) ||
+                                block6.getGlobalBounds().intersects(block2.getGlobalBounds()) ||
+                                block6.getGlobalBounds().intersects(block7.getGlobalBounds()) ||
+                                block6.getGlobalBounds().top < 83) {
+                                block6.setPosition(579, i + 1);
+                                break;
+                            }
+                        }
+                    }
+
+                }txt++;str = to_string(txt);moves.setString(str);
+            }if (block7.getGlobalBounds().contains(mp))
+            {
+                if (Mouse::isButtonPressed(Mouse::Left)) {
+                    Vector2i pos = Mouse::getPosition(window);
+                    if (Mouse::getPosition(window).x > block7.getPosition().x) {
+                        for (int i = block7.getPosition().x;i < Mouse::getPosition(window).x;i++) {
+                            block7.setPosition(i, 248);
+                            if (block7.getGlobalBounds().intersects(block6.getGlobalBounds()) ||
+                                block7.getGlobalBounds().intersects(block3.getGlobalBounds()) ||
+                                block7.getGlobalBounds().intersects(block4.getGlobalBounds()) ||
+                                block7.getGlobalBounds().intersects(block5.getGlobalBounds()) ||
+                                block7.getGlobalBounds().left + 306 > 940) {
+                                block7.setPosition(i - 1, 248);
+                                break;
+                            }
+                        }
+                    }
+                    else if (Mouse::getPosition(window).x < block7.getPosition().x) {
+                        for (int i = block7.getPosition().x;i > Mouse::getPosition(window).x;i--) {
+                            block7.setPosition(i, 248);
+                            if (block7.getGlobalBounds().intersects(block6.getGlobalBounds()) ||
+                                block7.getGlobalBounds().intersects(block3.getGlobalBounds()) ||
+                                block7.getGlobalBounds().intersects(block4.getGlobalBounds()) ||
+                                block7.getGlobalBounds().intersects(block5.getGlobalBounds()) ||
+                                block7.getGlobalBounds().left < 323) {
+                                block7.setPosition(i + 1, 248);
+                                break;
+                            }
+                        }
+                    }
+
+                }txt++; str = to_string(txt);moves.setString(str);
+            }if (reset.getGlobalBounds().contains(mp))
+            {
+                if (Mouse::isButtonPressed(Mouse::Left)) {
+                    txt = 0;str = to_string(txt);moves.setString(str);
+                    goto Reset;
+
+                }
+            }
+
+        }
+        window.clear();
+        window.draw(bg);window.draw(RedB);window.draw(block1);window.draw(block2);window.draw(block3);window.draw(block4);
+        window.draw(block5);window.draw(block6);window.draw(block7);window.draw(reset);window.draw(moves);
+        window.display();
+    }
+
+    return 0;
+}
