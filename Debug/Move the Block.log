@@ -1,0 +1,240 @@
+﻿  Move the Block.cpp
+D:\Project\Move the Block\Move the Block.cpp(59,91): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Project\Move the Block\Move the Block.cpp(59,72): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Project\Move the Block\Move the Block.cpp(68,95): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Project\Move the Block\Move the Block.cpp(68,74): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Project\Move the Block\Move the Block.cpp(169,41): warning C4244: '=': conversion from 'T' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+          and
+          [
+              T=float
+          ]
+D:\Project\Move the Block\Move the Block.cpp(170,41): warning C4244: '=': conversion from 'T' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+          and
+          [
+              T=float
+          ]
+D:\Project\Move the Block\Move the Block.cpp(173,89): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Project\Move the Block\Move the Block.cpp(173,70): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Project\Move the Block\Move the Block.cpp(183,93): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Project\Move the Block\Move the Block.cpp(183,72): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Project\Move the Block\Move the Block.cpp(198,77): warning C4305: 'initializing': truncation from 'double' to 'float'
+D:\Project\Move the Block\Move the Block.cpp(219,83): warning C4305: 'argument': truncation from 'double' to 'float'
+D:\Project\Move the Block\Move the Block.cpp(236,62): warning C4244: '=': conversion from 'T' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+          and
+          [
+              T=float
+          ]
+D:\Project\Move the Block\Move the Block.cpp(237,62): warning C4244: '=': conversion from 'T' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+          and
+          [
+              T=float
+          ]
+D:\Project\Move the Block\Move the Block.cpp(240,48): warning C4244: 'initializing': conversion from 'const T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Project\Move the Block\Move the Block.cpp(241,58): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Project\Move the Block\Move the Block.cpp(246,64): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Project\Move the Block\Move the Block.cpp(252,48): warning C4244: 'initializing': conversion from 'const T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Project\Move the Block\Move the Block.cpp(253,58): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Project\Move the Block\Move the Block.cpp(258,64): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Project\Move the Block\Move the Block.cpp(268,52): warning C4244: 'initializing': conversion from 'const T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Project\Move the Block\Move the Block.cpp(269,64): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Project\Move the Block\Move the Block.cpp(274,70): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Project\Move the Block\Move the Block.cpp(280,52): warning C4244: 'initializing': conversion from 'const T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Project\Move the Block\Move the Block.cpp(281,64): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Project\Move the Block\Move the Block.cpp(286,70): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Project\Move the Block\Move the Block.cpp(297,52): warning C4244: 'initializing': conversion from 'const T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Project\Move the Block\Move the Block.cpp(298,78): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Project\Move the Block\Move the Block.cpp(304,84): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Project\Move the Block\Move the Block.cpp(310,52): warning C4244: 'initializing': conversion from 'const T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Project\Move the Block\Move the Block.cpp(311,78): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Project\Move the Block\Move the Block.cpp(317,84): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Project\Move the Block\Move the Block.cpp(327,52): warning C4244: 'initializing': conversion from 'const T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Project\Move the Block\Move the Block.cpp(328,64): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Project\Move the Block\Move the Block.cpp(333,70): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Project\Move the Block\Move the Block.cpp(339,52): warning C4244: 'initializing': conversion from 'const T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Project\Move the Block\Move the Block.cpp(340,64): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Project\Move the Block\Move the Block.cpp(345,70): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Project\Move the Block\Move the Block.cpp(357,52): warning C4244: 'initializing': conversion from 'const T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Project\Move the Block\Move the Block.cpp(358,78): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Project\Move the Block\Move the Block.cpp(364,84): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Project\Move the Block\Move the Block.cpp(370,52): warning C4244: 'initializing': conversion from 'const T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Project\Move the Block\Move the Block.cpp(371,78): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Project\Move the Block\Move the Block.cpp(377,84): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Project\Move the Block\Move the Block.cpp(388,52): warning C4244: 'initializing': conversion from 'const T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Project\Move the Block\Move the Block.cpp(389,64): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Project\Move the Block\Move the Block.cpp(394,70): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Project\Move the Block\Move the Block.cpp(400,52): warning C4244: 'initializing': conversion from 'const T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Project\Move the Block\Move the Block.cpp(401,64): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Project\Move the Block\Move the Block.cpp(406,70): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Project\Move the Block\Move the Block.cpp(418,52): warning C4244: 'initializing': conversion from 'const T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Project\Move the Block\Move the Block.cpp(419,78): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Project\Move the Block\Move the Block.cpp(425,84): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Project\Move the Block\Move the Block.cpp(431,52): warning C4244: 'initializing': conversion from 'const T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Project\Move the Block\Move the Block.cpp(432,78): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Project\Move the Block\Move the Block.cpp(438,84): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Project\Move the Block\Move the Block.cpp(543,89): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Project\Move the Block\Move the Block.cpp(543,70): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Project\Move the Block\Move the Block.cpp(552,93): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Project\Move the Block\Move the Block.cpp(552,72): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Project\Move the Block\Move the Block.cpp(568,89): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Project\Move the Block\Move the Block.cpp(568,70): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Project\Move the Block\Move the Block.cpp(577,93): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Project\Move the Block\Move the Block.cpp(577,72): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Project\Move the Block\Move the Block.cpp(594,89): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Project\Move the Block\Move the Block.cpp(594,70): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Project\Move the Block\Move the Block.cpp(603,93): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Project\Move the Block\Move the Block.cpp(603,72): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Project\Move the Block\Move the Block.cpp(196,40): warning C4101: 'x': unreferenced local variable
+  LINK : program database D:\Project\Move the Block\Debug\Move the Block.pdb missing; performing full link
+  Move the Block.vcxproj -> D:\Project\Move the Block\Debug\Move the Block.exe
